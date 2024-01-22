@@ -29,9 +29,11 @@ function Profile() {
         <TextDefault H5 bold textColor={colors.fontSecondColor}>
           {i18n.t('welcome')}
         </TextDefault>
-        <TextDefault H3 textColor={colors.fontSecondColor} bolder>
-          {user.user_id.name}
-        </TextDefault>
+        {isLogin && user && (
+          <TextDefault H3 textColor={colors.fontSecondColor} bolder>
+            {user.user_id.name}
+          </TextDefault>
+        )}
       </View>
     </View>
   );

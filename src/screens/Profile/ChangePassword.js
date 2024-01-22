@@ -81,7 +81,7 @@ function ChangePassword(props) {
         <View style={styles.modalContent}>
           <View style={styles.titleContainer}>
             <TextDefault bold H4>
-              Đổi mật khẩu
+              {i18n.t('changePassword')}
             </TextDefault>
           </View>
 
@@ -89,7 +89,7 @@ function ChangePassword(props) {
             <TextField
               secureTextEntry
               error={oldPasswordError}
-              label="Mật khẩu hiện tại"
+              label={i18n.t('currentPassword')}
               labelFontSize={scale(12)}
               fontSize={scale(12)}
               labelHeight={10}
@@ -110,7 +110,7 @@ function ChangePassword(props) {
             <TextField
               secureTextEntry
               error={newPasswordError}
-              label="Mật khẩu mới"
+              label={i18n.t('newPassword')}
               labelFontSize={scale(12)}
               fontSize={scale(12)}
               labelHeight={10}

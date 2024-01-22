@@ -133,7 +133,9 @@ function OrderDetail() {
     item.topping_ids.map((i) => {
       toppingStr = toppingStr + i.name + ', ';
     });
-    return `Size ${item.size_id.name}, ${toppingStr}${item.sugar}% đường,  ${item.ice}% đá`;
+    return `Size ${item.size_id.name}, ${toppingStr}${item.sugar}% ${i18n.t(
+      'sugar',
+    )},  ${item.ice}% ${i18n.t('ice')}`;
   };
 
   function getOrderItems(items) {
@@ -187,7 +189,7 @@ function OrderDetail() {
                 bolder
                 textColor={colors.primary}
                 style={{ ...alignment.PTxSmall, ...alignment.PBxSmall }}>
-                Thông tin khách hàng
+                {i18n.t('customerInfo')}
               </TextDefault>
             </View>
             <View style={styles.customerContent}>
@@ -196,7 +198,7 @@ function OrderDetail() {
                   bolder
                   textColor={colors.placeHolderColor}
                   style={{ ...alignment.PTxSmall, paddingBottom: 2 }}>
-                  Họ và tên
+                  {i18n.t('name')}
                 </TextDefault>
                 <TextDefault bolder style={{ ...alignment.PBxSmall }}>
                   {orderPartner.name}
@@ -207,7 +209,7 @@ function OrderDetail() {
                   bolder
                   textColor={colors.placeHolderColor}
                   style={{ ...alignment.PTxSmall, paddingBottom: 2 }}>
-                  Số điện thoại
+                  {i18n.t('phone')}
                 </TextDefault>
                 <TextDefault bolder style={{ ...alignment.PBxSmall }}>
                   {orderPartner.phone}
@@ -218,7 +220,7 @@ function OrderDetail() {
                   bolder
                   textColor={colors.placeHolderColor}
                   style={{ ...alignment.PTxSmall, paddingBottom: 2 }}>
-                  Địa chỉ giao hàng
+                  {i18n.t('deliveryAddress')}
                 </TextDefault>
                 <TextDefault
                   numberOfLines={2}
@@ -247,7 +249,7 @@ function OrderDetail() {
                     style={{ marginLeft: 8 }}
                     textColor={colors.fontMainColor}
                     bold>
-                    Gọi điện
+                    {i18n.t('call')}
                   </TextDefault>
                 </TouchableOpacity>
                 {/* <TouchableOpacity
@@ -274,7 +276,7 @@ function OrderDetail() {
                 bolder
                 textColor={colors.primary}
                 style={{ ...alignment.PTmedium }}>
-                Chi tiết đơn hàng
+                {i18n.t('detailOrder')}
               </TextDefault>
             </View>
 
@@ -283,7 +285,7 @@ function OrderDetail() {
             <View style={styles.line} />
             <View style={styles.orderRow}>
               <TextDefault H4 bolder>
-                Tổng tiền
+                {i18n.t('totalAmount')}
               </TextDefault>
               <TextDefault
                 numberOfLines={1}
@@ -309,7 +311,7 @@ function OrderDetail() {
                 H4
                 bold
                 style={{ ...alignment.PTxSmall, ...alignment.PBxSmall }}>
-                Chỉ đường
+                {i18n.t('direct')}
               </TextDefault>
             </TouchableOpacity>
           </View>
@@ -329,7 +331,7 @@ function OrderDetail() {
                   H4
                   bold
                   style={{ ...alignment.PTxSmall, ...alignment.PBxSmall }}>
-                  Nhận đơn hàng
+                  {i18n.t('receiveOrder')}
                 </TextDefault>
               </TouchableOpacity>
               <TouchableOpacity
@@ -343,7 +345,7 @@ function OrderDetail() {
                   H4
                   bold
                   style={{ ...alignment.PTxSmall, ...alignment.PBxSmall }}>
-                  Từ chối
+                  {i18n.t('reject')}
                 </TextDefault>
               </TouchableOpacity>
             </View>
@@ -362,7 +364,7 @@ function OrderDetail() {
                   H4
                   bold
                   style={{ ...alignment.PTxSmall, ...alignment.PBxSmall }}>
-                  Hoàn thành đơn hàng
+                  {i18n.t('completeOrder')}
                 </TextDefault>
               </TouchableOpacity>
             </View>

@@ -24,7 +24,6 @@ function Settings() {
   const { colors } = useTheme();
   const navigation = useNavigation();
   const modalizeRef = useRef(null);
-  const modalizeRef1 = useRef(null);
 
   const [loading, setLoading] = useState(false);
   const [languageName, languageNameSetter] = useState('Tiếng Việt');
@@ -58,7 +57,6 @@ function Settings() {
 
   const onClose = () => {
     modalizeRef.current.close();
-    modalizeRef1.current.close();
   };
 
   return (
@@ -77,7 +75,7 @@ function Settings() {
                   numberOfLines={1}
                   textColor={colors.statusSecondColor}
                   medium>
-                  Ngôn ngữ{' '}
+                  {i18n.t('language')}
                 </TextDefault>
                 <TextDefault textColor={colors.statusSecondColor} medium>
                   ({languageName})
@@ -98,7 +96,7 @@ function Settings() {
 
           <View style={styles.versionContainer}>
             <TextDefault textColor={colors.fontSecondColor}>
-              Phiên bản: 1.0.0
+              {i18n.t('version')}: 1.0.0
             </TextDefault>
           </View>
         </View>

@@ -215,7 +215,7 @@ function Profile() {
         <TouchableOpacity
           onPress={() => setModalVisible(true)}
           style={styles.changePassword}>
-          <TextDefault>Đổi mật khẩu</TextDefault>
+          <TextDefault>{i18n.t('changePassword')}</TextDefault>
           <MaterialCommunityIcons
             name={ICONS_NAME.Pencil}
             size={20}

@@ -118,7 +118,7 @@ export default function Login() {
               <TextDefault
                 style={alignment.MBmedium}
                 textColor={colors.placeHolderColor}>
-                Nhập Email và Mật khẩu của bạn
+                {i18n.t('enterEmailPassword')}
               </TextDefault>
               {/* <FilledTextField
                 error={emailError}
@@ -171,7 +171,7 @@ export default function Login() {
               />
               <View style={styles.mt15} />
               <TextInput
-                placeholder="Mật khẩu"
+                placeholder={i18n.t('password')}
                 secureTextEntry
                 multiline={false}
                 cursorColor={colors.fontMainColor}

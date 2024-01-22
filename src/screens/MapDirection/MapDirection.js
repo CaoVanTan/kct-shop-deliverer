@@ -16,6 +16,7 @@ import useStyle from './styles';
 import { hasLocationPermission } from '../../services/Location';
 import MapViewDirections from 'react-native-maps-directions';
 import { GOOGLE_API_KEY } from '../../configs/environment';
+import i18n from '../../configs/i18n';
 
 export default function MapDirection() {
   const route = useRoute();
@@ -37,7 +38,7 @@ export default function MapDirection() {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: 'Bản đồ',
+      title: i18n.t('map'),
       headerRight: null,
     });
   }, [navigation]);
@@ -126,7 +127,7 @@ export default function MapDirection() {
               navigation.goBack();
             }}>
             <TextDefault textColor={colors.white} H4 bold>
-              Hoàn thành
+              {i18n.t('done')}
             </TextDefault>
           </TouchableOpacity>
         </View>

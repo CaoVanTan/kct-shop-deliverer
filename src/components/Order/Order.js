@@ -8,26 +8,23 @@ import styles from './style';
 import TextDefault from '../Text/TextDefault/TextDefault';
 import { alignment } from '../../utils/alignment';
 import { formatCurrency } from '../../utils/format';
+import i18n from '../../configs/i18n';
 
 export const orderStatuses = [
   {
     key: 'waiting',
-    name: 'Chờ lấy hàng',
     color: '#febb2c',
   },
   {
     key: 'delivering',
-    name: 'Đang giao hàng',
     color: '#28b446',
   },
   {
     key: 'delivered',
-    name: 'Đã giao hàng',
     color: '#f14336',
   },
   {
     key: 'done',
-    name: 'Hoàn thành',
     color: '#f14336',
   },
 ];
@@ -56,7 +53,7 @@ function Order(props) {
               numberOfLines={2}
               bold
               textColor={colors.placeHolderColor}>
-              Mã đơn hàng
+              {i18n.t('codeOrders')}
             </TextDefault>
             <TextDefault H4 bolder>
               {props.orderCode}
@@ -73,7 +70,7 @@ function Order(props) {
                 bold
                 uppercase
                 style={{ ...alignment.PLxSmall, ...alignment.PRxSmall }}>
-                {checkStatus(props.orderStatus).name}
+                {i18n.t(checkStatus(props.orderStatus).key)}
               </TextDefault>
             </View>
             <View style={{ paddingLeft: '5%' }}>
@@ -96,13 +93,13 @@ function Order(props) {
               style={alignment.MTmedium}
               textColor={colors.placeHolderColor}
               bold>
-              Tổng tiền
+              {i18n.t('totalAmount')}
             </TextDefault>
             <TextDefault
               textColor={colors.placeHolderColor}
               bold
               style={{ ...alignment.MTxSmall }}>
-              Thời gian đặt hàng
+              {i18n.t('timeOrder')}
             </TextDefault>
           </View>
           <View>

@@ -7,6 +7,7 @@ import useStyle from './styles';
 import EmptyOrder from '../../assets/images/SVG/imageComponents/EmptyOrder';
 import { scale } from '../../utils/scaling';
 import { TextDefault } from '../Text';
+import i18n from '../../configs/i18n';
 
 export default function NewOrders({ data, loading, onRefresh }) {
   const styles = useStyle();
@@ -24,7 +25,7 @@ export default function NewOrders({ data, loading, onRefresh }) {
         </View>
         <View style={styles.descriptionEmpty}>
           <TextDefault bolder center H4>
-            Không có đơn hàng
+            {i18n.t('noOrder')}
           </TextDefault>
         </View>
       </View>

@@ -82,7 +82,7 @@ export default function Orders() {
               },
             ]}>
             <TextDefault bold H5 numberOfLines={1}>
-              Lịch sử
+              {i18n.t('history')}
             </TextDefault>
           </TouchableOpacity>
         </View>
